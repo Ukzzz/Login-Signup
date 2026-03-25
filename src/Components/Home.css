@@ -1,51 +1,129 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
-}
-
 .home-container {
   display: flex;
-  height: 100vh;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
+  width: 100%;
 }
 
 .home-box {
+  width: 100%;
+  max-width: 600px;
+  padding: 4rem;
   text-align: center;
-  padding: 40px;
-  background: linear-gradient(to top, #ffffff, #f1f1f1);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
-}
-
-.home-box:hover {
-  transform: scale(1.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg);
 }
 
 .home-title {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #fff 0%, var(--text-secondary) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .home-nav {
-  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.home-link {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #3366cc;
-  font-weight: bold;
-  transition: color 0.3s ease;
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.home-link:hover {
-  color: #003399;
+.home-button.primary {
+  background: var(--primary);
+  color: white;
 }
 
-.separator {
-  color: #888;
+.home-button.primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.home-button.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid var(--border);
+}
+
+.home-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.home-button.outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.home-button.outline:hover {
+  color: #f87171;
+  border-color: #f87171;
+}
+
+.home-footer {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer-link {
+  color: var(--secondary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .home-box {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .home-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .home-button {
+    width: 100%;
+    justify-content: center;
+  }
 }
